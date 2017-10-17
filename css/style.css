@@ -1,0 +1,108 @@
+
+@import url("components/button.css");
+@import url("components/image.css");
+body{
+	background-color:white;
+	font-family:Georgia, serif;
+}
+
+
+ul li a::after{
+	 transform: rotate(270deg)
+}
+nav{
+	font-size:22px;
+	font-family:Georgia, serif;
+	color:black;
+	position:absolute;
+	left: 100px;
+	top: 500px
+	width:960px;
+	height:50px;
+
+	margin-top:24px; /* Marge en haut de l'element*/
+	text-align: center;/*alignement du text  -ici au centre */
+}
+nav li {
+	display : inline-block; /*permet d'indiquer explicitement le mode de rendu d'un élement , inline-block permet de contenir des blocks et du texte (super pratique pour un menu horizontal), */
+	margin-right:25px;
+	margin-top:10px;
+}
+a {
+	text-decoration:none;
+	color:#0d10c1;
+}
+a:hover{
+	text-decoration:none;
+	color:#000000;
+}
+.slogan{
+
+	position:absolute;/* Positionnel (le positionnel se fera par rapport au coin haut gauche de la page html,ou par rapport au premier parent touvé qui n'est pas static.)*/
+	left:250px;/*emplacement de l'element a gauche */
+	top:-30px;/*emplacement de l'element au haut*/
+	font-family:Georgia;
+	font-size:30px;
+	color:#0438FB;
+}
+article{
+	display:table-cell;
+	/* element est interprete comme une balise 'td' 'th'*/
+	width:auto;
+	background-color:white;
+	padding:5px 15px;
+	
+}
+
+#i{
+	display:table-cell;
+	text-align:center;
+	width:auto;
+	width:300px;
+	height:100%;	
+    padding:15px;
+  
+
+}
+
+#ii{
+	display:table-cell;
+	text-align:center;
+	width:auto;
+	width:300px;
+	height:100%;
+	padding:10px;	
+   
+}
+
+
+
+
+footer{
+	float:left;/*float permet de specifier si l'affichage des element suivant sont adjacents;*/
+	background-color:#610B0B;
+	text-align:center;
+	height:200px;
+	color:#610B0B;
+	width:960px;
+	line-height:30px;/*permet de specifier la hauteur d'une ligne de texte et donc aussi de gerer l'espace entre les lignes */
+}
+
+p{
+	font-family:Georgia;
+
+	font-size:12px;
+}
+#footer1{
+	position:absolute;
+    top:830px;
+	left:550px;
+}
+#nom{
+	position:relative;
+	left: 300px
+}
+*{
+margin: 0;
+padding:0;
+}
