@@ -1,0 +1,53 @@
+menu a::after{
+	 transform: rotate(270deg)
+}
+nav{
+	font-size:22px;
+	font-family:Georgia, serif;
+	position:absolute;
+	left: 300px;
+
+	height:50px;
+	margin-top:24px; /* Marge en haut de l'element*/
+text-align: center;/*alignement du text  -ici au centre */
+}
+.menu a {
+	display : inline-block; /*permet d'indiquer explicitement le mode de rendu d'un élement , inline-block permet de contenir des blocks et du texte (super pratique pour un menu horizontal), */
+margin-right:25px;
+	margin-top:10px;
+padding-left:30px;
+}
+a {
+	text-decoration:none;
+	color:#fff;
+}
+a:hover{
+	text-decoration:none;
+	color:#F9A544;
+	font-size:25px;
+	  transition: all 0.3s ease-in-out;
+}
+.intro-header h1{
+
+
+	font-size:30px;
+	color:#fff;
+}
+header{
+	width: 100%;
+	height:100%;
+
+	line-height: 66px;
+
+/*background:linear-gradient(-255deg,rgba(30,30,30,0.6)30%,rgba(46,46,46,0.5)80%),url("https://cdn2.hubspot.net/hubfs/678212/designdeath2.jpg") no-repeat center center fixed ;
+background-size:cover;*/
+}
+.bg-overlay{
+	background: rgba(0, 0, 0, 0.5);
+	height: 855px;
+}
+
+.menu{
+
+	margin: auto;
+}

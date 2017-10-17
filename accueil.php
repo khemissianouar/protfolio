@@ -14,6 +14,7 @@
 <body>
 <header>
 
+
 <nav class="menu">
 
 
@@ -172,13 +173,16 @@ Développement d’une application pour organiser la gestion de stages en PHP
 
 
 <div class="container">
+  <?php for ($i=0; $i <3 ; $i++): ?>
+
 
 	<div class="row">
+    <?php for ($j=0; $j <4 ; $j++): ?>
 
 		<article class="col-xs-6 work">
 			<img src="img/accueil.jpg"/>
 			<br>
-			<strong> ma réalisation</strong>
+			<strong> ma réalisation<? $j .'-'.$i ?></strong>
       <em>Wordpress<em>
         <div class="work_detail">
             <hr/>
@@ -190,7 +194,8 @@ Développement d’une application pour organiser la gestion de stages en PHP
                   <img src="img/accueil.jpg">
                   <img src="img/accueil.jpg">
                 </div>
-              </div>
+                </div>
+
                 <div class="col-xs-4">
                   <h2 class="stagger1">Mes Project <h2>
                     <p class="stagger2"><em>Word<em><p>
@@ -202,21 +207,12 @@ Développement d’une application pour organiser la gestion de stages en PHP
         </hr>
       </div>
 		</article>
-    <article class="col-xs-6">
-      <img src="img/accueil.jpg"/>
-      <br>
-      <strong> ma réalisation</strong>
-    </article>
-    <article class="col-xs-6">
-      <img src="img/accueil.jpg"/>
-      <br>
-      <strong> ma réalisation</strong>
-      <em> le projet<em>
-    </article>
 
-		</div>
+<?php endfor; ?>
+
 
     <div class="row row-detail"></div>
+    <?php endfor; ?>
 
 
 </div>
