@@ -7,27 +7,19 @@
 @import url("components/apropos.css");
 @import url("components/projets.css");
 
-@font-face{
-	font-family: "roboto";
-	src:url("../fonts/Roboto-Thin.ttf") format("truetype");
-}
-
-
  html, body{
-	font-family:roboto;
 	background-color:white;
 	font-family:Georgia, serif;
-	padding: 0;
 	margin: 0;
   	line-height: 1.5;
-  	padding-top: 80px;
+
 }
 img{
 	width: 100%;
 	height: auto;
 }
 h2{
-	margin-bottom: 0;
+	margin-top: 0;
 }
 .work{
 	cursor: pointer;
@@ -35,20 +27,17 @@ h2{
 	margin-bottom:10px;
 }
 .work_detail{
-
 	display: none;
 }
-.work.slideshow{
+.work_slideshow{
 height: 364px;
 overflow: hidden;
-
 }
 em{
-	opacity:0.7;
+	opacity:0.6;
 }
 .parcours{
-
-  text-align: center;
+	text-align: center;
 background:#000000;
 color: #fff;
 width: 100%;

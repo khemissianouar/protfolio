@@ -173,47 +173,37 @@ Développement d’une application pour organiser la gestion de stages en PHP
 
 
 <div class="container">
-  <?php for ($i=0; $i <3 ; $i++): ?>
+  <?php for ($i=1; $i <=2; $i++): ?>
+      <div class="row">
+    <?php for ($j=1; $j <=2 ; $j++): ?>
 
-
-	<div class="row">
-    <?php for ($j=0; $j <4 ; $j++): ?>
-
-		<article class="col-xs-6 work">
-			<img src="img/accueil.jpg"/>
-			<br>
-			<strong> ma réalisation<? $j .'-'.$i ?></strong>
-      <em>Wordpress<em>
+		<article class="col-xs-6 work" id="realisation-<?= $j .'-'.$i ?>">
+			<img src="img/accueil.jpg"/><br>
+			<strong> ma réalisation<?= $j .'-'.$i ?></strong><br>
+      <em>Wordpress</em>
         <div class="work_detail">
             <hr/>
             <div class="row">
-              <div class="work_slideshow stagger4">
-
                 <div class="col-xs-8">
-                  <img src="img/accueil.jpg">
-                  <img src="img/accueil.jpg">
-                  <img src="img/accueil.jpg">
+                    <div class="work_slideshow stagger4">
+                  <img src="http://lorempicsum.com/futurama/460/250/1">
+                    <img src="http://lorempicsum.com/futurama/460/250/2">
+                    <img src="http://lorempsicsum.com/futurama/460/250/3">
                 </div>
                 </div>
-
-                <div class="col-xs-4">
-                  <h2 class="stagger1">Mes Project <h2>
-                    <p class="stagger2"><em>Word<em><p>
-                      <p class="stagger3"> s,vpoepovjoejoivjeoijvi <p>
-
-
-          	</div>
+                  <div class="col-xs-4">
+                  <h2 class="stagger1">Mes Project <?=$j .'-'.$i ?></h2>
+                    <p class="stagger2"><em>Word<em></p>
+                      <p class="stagger3"> s,vpoepovjoejoivjeoijv</p>
+                      </div>
           </div>
         </hr>
       </div>
-		</article>
-
+        </article>
 <?php endfor; ?>
-
-
+      </div>
     <div class="row row-detail"></div>
     <?php endfor; ?>
-
 
 </div>
 </div>
@@ -228,16 +218,17 @@ Développement d’une application pour organiser la gestion de stages en PHP
 
 </div>
 
-</article>
+
 <footer>
 
 
 </footer>
 
 
-<script src="js/app.js" charset="utf-8"></script>
+<script src="js/app.js"/>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="js/jquery.nivo.slider.pack.js" charset="utf-8"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/jquery.nivo.slider.pack.js"></script>
 
 </body>
 </html>

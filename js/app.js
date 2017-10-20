@@ -1,75 +1,69 @@
-JQuery(document).ready(function($){
+  jQuery(document).ready(function($){
    var $active = false;
-   Window.onhashchange=function(){
-     alert('Window.location.hash');
-   }
-   if ($work.hasClass('active')) {
-     return  true;
+    window.onhashchange = function() {
 
-   }
+        if (window.location.hash.indexOf('realisation-') < 0) {
+            return true;
+        }
+
+        var $work = $(window.location.hash);
+        if ($work.length < 1 || $work.hasClass('active')){
+            return true;
+
+        }
+
+        var $detail = $work.parent().nextAll('.row-detail:first');
+        var $work_detail = $('.work_detail', $work).clone();
+        var showElement = function () {
+            $detail.append($work_detail);
+            $work_detail.slideDown();
+            //Animation
+            for (var i = 1; i <= 4; i++) {
+                $('.stagger'+ i,$work_detail).css({opacity:0,marginLeft:-20}).delay(300 + 200 * i).animate({opacity:1,marginLeft:0});
+            }
+            $active = $work_detail;
 
 
-$('.work').click(function(e){
-e.preventDefault();
-var $work =$(this);
-var $detail = $work.parent().nextAll('row-detail:first');
-var $work_detail =$('.work_detail',$work).clone();
-var showElement = function(){
-  $detail.append($work_detail);
-  $work_detail.slideDown();
-  //Animation
-  for (var i = 1; i <=4; i++) {
-  $('.stagger'+ i,$work_detail).css({opacity:0,marginLeft:-20}).delay(300 * 200 *i).animate({opacity:1,marginLeft:0})
-  }
-  $active =$work_detail
+        }
+        var hideAction = function () {
 
+            var $el = $active;
+            $el.slideUp(500, function () {
 
-}
-var hideAction = function(){
+                $el.remove();
 
-  var $el=$active;
-      $el.slideUp(500,function(){
-
-    $el=remove();
-
-});}
-var buildSlideShow =function(){
-  $('.work_detail.append',$work_detail).nivoSlider({
-  effect : 'boxRain',
-  directionNav: false,
-  controlNav:false,
-  pauseTime :4000
-});
-
-}
+            });
+        }
+        var buildSlideShow = function () {
+            $('.work_slideshow', $work_detail).nivoSlider({
+                effect: 'boxRain',
+                directionNav: false,
+                controlNav: false,
+                pauseTime: 4000
+            });
+        }
 // Traitement
-$('.work').removeClass('active');
-$work.addClass('active');
+        $('.work').removeClass('active');
+        $work.addClass('active');
 
-if($active){ hideAction();
-}
-showElement();
-buildSlideShow();
-Window.location.hash=$work.attr('id');
-
-
-
-});
-if(Window.location.hash){
-  var $target=$(Window.location.hash);
-  if ($target.length>0) {
-    $target.trigger('click');
-    scrollTo($target);
-
-  }
-}
-
-
+        if ($active) {
+            hideAction();
+        }
+        showElement();
+        buildSlideShow();
+    }
+    $('.work').click(function(e){
+     e.preventDefault();
+     window.location.hash=$(this).attr('id');
 
 });
-var scrollTo(cible){
-  $('html,body').animate({scrollTop:cible.offset.top},750);
+
+window.onhashchange();
+});
+
+
+var scrollTo=function(cible)
+{
+    $('html,body').animate({scrollTop: cible.offset().top},750);
 }
-$('.m-nav-toggle').click(function(a){
-a.preventDefault();
-$('.menu').toggleClass('is-open');
+
