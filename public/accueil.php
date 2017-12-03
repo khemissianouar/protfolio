@@ -7,8 +7,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/bootstrap.min.css"/>
-<link rel="stylesheet" href="css/style.css"/>
-<link rel="stylesheet" href="css/nivo-slider.css"/>
+<link rel="stylesheet" href="../../css/style.css"/>
+<link rel="stylesheet" href="../css/nivo-slider.css"/>
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
@@ -76,7 +76,7 @@
         je suis à rechercher d'un contrat de professionnalisation et si possible dans le web
         je suis néanmoins ouvert à toutes autres propositions!
 </p></div>
-<img src="img/khemissi.jpg" class="avatar">
+<img src="../img/khemissi.jpg" class="avatar">
 </div>
 <div class="parcours">
 <h1> Mon parcours </h1>
@@ -178,7 +178,7 @@ Développement d’une application pour organiser la gestion de stages en PHP
     <?php for ($j=1; $j <=2 ; $j++): ?>
 
 		<article class="col-xs-6 work" id="realisation-<?= $j .'-'.$i ?>">
-			<img src="img/accueil.jpg"/><br>
+			<img src="../img/accueil.jpg"/><br>
 			<strong> ma réalisation<?= $j .'-'.$i ?></strong><br>
       <em>Wordpress</em>
         <div class="work_detail">
@@ -225,10 +225,10 @@ Développement d’une application pour organiser la gestion de stages en PHP
 </footer>
 
 
-<script src="js/app.js"/>
+<script src="../js/app.js"/>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/jquery.nivo.slider.pack.js"></script>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/jquery.nivo.slider.pack.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,22 @@
+{
+    "name": "root/protfolio",
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.*",
+        "phpunit/phpunit": "^6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Portfolio\\": "src/Portfolio"
+        }
+    },
+    "authors": [
+        {
+            "name": "Anouar Khemissi",
+            "email": "anouar.khemissi@epitech.eu"
+        }
+    ],
+    "require": {
+        "guzzlehttp/psr7": "^1.4",
+        "http-interop/response-sender": "^1.0"
+    }
+}
