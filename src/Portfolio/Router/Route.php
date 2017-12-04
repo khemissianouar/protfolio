@@ -16,12 +16,7 @@ class Route{
         $this->parameters=$parameters;
     }
 
-    /**
-     * @return string
-     */
-
-
-    public function getName():string {
+    public function getName(): string {
         return $this->name;
 
     }
@@ -29,15 +24,14 @@ class Route{
     /**
      * @return callable
      */
-    public function getCallback():callable{
+    public function getCallback(): callable{
         return $this->callback;
     }
 
     /**
-     * Retrive
      * @return String[]
      */
-    public function getParameters():array{
+    public function getParameters(): array{
         return $this->parameters;
     }
 }

@@ -40,9 +40,10 @@ class Router{
 
     public function match(ServerRequestInterface $request): ?Route{
 
-        $result=$this->router->match($request);
-        if ($result->isSuccess()) {
-            return new Route($result->getMatchedRouteName(),
+        $result = $this->router->match($request);
+        if ($result->isSuccess()){
+            return new Route(
+                $result->getMatchedRouteName(),
                 $result->getMatchedMiddleware(),
                 $result->getMatchedParams()
             );
@@ -52,13 +53,13 @@ class Router{
 
     /**
      * @param string $name
-     * @param array $paramets
+     * @param array $parameters
      * @return null|string
      */
 
-    public function generateUri(string $name, array $paramets): ?string
+    public function generateUri(string $name, array $parameters): ?string
     {
-       return $this->router->generateUri($name,$paramets);
+       return $this->router->generateUri($name,$parameters);
 
     }
 }
