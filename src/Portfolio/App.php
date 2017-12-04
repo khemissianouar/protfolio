@@ -8,6 +8,15 @@ use Psr\Http\Message\ServerRequestInterface;
 class App
 {
 
+public function __construct(array $modules=[])
+{
+    foreach ($modules as $module){
+
+        $this->module=new module;
+    }
+
+}
+
     public function run(ServerRequestInterface $request): ResponseInterface
     {
 
