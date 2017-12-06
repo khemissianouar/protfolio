@@ -6,7 +6,9 @@
     },
     "autoload": {
         "psr-4": {
-            "Portfolio\\": "src/Portfolio"
+            "Portfolio\\": "src/Portfolio",
+            "App\\":"src",
+            "Test\\":"tests"
         }
     },
     "authors": [
