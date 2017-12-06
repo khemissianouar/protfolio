@@ -1,10 +1,17 @@
 <?php
-namespace Tests\Portfolio\Modules;
 
-class StringModule{
+namespace Tests\Modules;
 
-    public function __construct(\Portfolio\Router $route)
+use Portfolio\Router;
+
+class StringModule
+{
+
+    public function __construct(Router $route)
     {
-        $route->get('/demo',function (){ return 'DEMO';},'demo');
+        $route->get('/demo', function () {
+            return 'DEMO';
+        },
+            'demo');
     }
 }

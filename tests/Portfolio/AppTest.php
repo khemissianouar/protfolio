@@ -1,13 +1,14 @@
 <?php
+# AppTest.php
 
-namespace tests\Portfolio;
+namespace Tests\Portfolio;
 
 use App\Blog\BlogModule;
 use GuzzleHttp\Psr7\ServerRequest;
 use Portfolio\App;
 use PHPUnit\Framework\TestCase;
-use Tests\Portfolio\Module\ErroredModule;
-use Tests\Portfolio\Module\StringModule;
+use Tests\Modules\StringModule;
+use Tests\Modules\ErroredModule;
 use Zend\Stdlib\ResponseInterface;
 
 class AppTest extends TestCase
@@ -24,24 +25,23 @@ class AppTest extends TestCase
 
     }
 
-
-    public function testThrowExeptionIfNoResponseSent(){
+    public function testThrowExeptionIfNoResponseSent()
+    {
         $app = new App([
             ErroredModule::class
         ]);
-        $request=new ServerRequest('GET','/demo');
+        $request = new ServerRequest('GET', '/demo');
         $this->expectException(\Exception::class);
         $app->run($request);
-
     }
-    public function testConvetStringToResponseSent(){
-        $app = new App([
-            StringModule::class
-        ]);
-        $request=new ServerRequest('GET','/demo');
-    $response  =  $app->run($request);
-    $this->assertInstanceOf(ResponseInterface::class,$response);
-    $this->assertEquals('DEMO',(string)$response->getBody());
+
+    public function testConvetStringToResponseSent()
+    {
+        $app = new App([StringModule::class]);
+        $request = new ServerRequest('GET', '/demo');
+        $response = $app->run($request);
+        $this->assertInstanceOf(ResponseInterface::class, $response);
+        $this->assertEquals('DEMO', (string)$response->getBody());
 
     }
 
@@ -62,12 +62,10 @@ class AppTest extends TestCase
         ]);
         $request = new ServerRequest('GET', '/blog');
         $response = $app->run($request);
-        $this->assertContains('<h1>Bienvenue dans le blog</h1>',(string)$response->getBody());
+        $this->assertContains('<h1>Bienvenue dans le blog</h1>', (string)$response->getBody());
         $this->assertEquals(200, $response->getStatusCode());
         $requestSingle = new ServerRequest('GET', '/blog/article-de-test');
         $responseSingle = $app->run($requestSingle);
-        $this->assertContains('<h1>Birnvenue sur l\'article article-de-test</h1>');
-
+        $this->assertContains('<h1>Birnvenue sur l\'article article-de-test</h1>', (string)$responseSingle->getBody());
     }
-
 }

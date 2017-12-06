@@ -1,22 +1,25 @@
 <?php
+
 namespace Portfolio\Router;
 /**
  * Class Route
  * @package Portfolio\Router
  */
-class Route{
+class Route
+{
     private $name;
     private $parameters;
     private $callback;
 
-    public function __construct(string $name,callable $callback,array $parameters)
+    public function __construct(string $name, callable $callback, array $parameters)
     {
-        $this->callback=$callback;
-        $this->name=$name;
-        $this->parameters=$parameters;
+        $this->callback = $callback;
+        $this->name = $name;
+        $this->parameters = $parameters;
     }
 
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->name;
 
     }
@@ -24,14 +27,16 @@ class Route{
     /**
      * @return callable
      */
-    public function getCallback(): callable{
+    public function getCallback(): callable
+    {
         return $this->callback;
     }
 
     /**
      * @return String[]
      */
-    public function getParameters(): array{
+    public function getParameters(): array
+    {
         return $this->parameters;
     }
 }

@@ -1,9 +1,16 @@
 <?php
-namespace Tests\Modules;
-class ErroredModule{
 
-    public function __construct(\Portfolio\Router $router)
+namespace Tests\Modules;
+
+use Portfolio\Router;
+
+class ErroredModule
+{
+
+    public function __construct(Router $router)
     {
-        $router->get('/demo',function (){ return new \stdClass();},'demo');
+        $router->get('/demo', function () {
+            return new \stdClass();
+        }, 'demo');
     }
 }
