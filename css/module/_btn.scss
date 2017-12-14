@@ -1,0 +1,22 @@
+.btn{
+  padding: 0 40px;
+  margin: 60px;
+  font-size: 15px;
+  text-transform: uppercase;
+  display: inline-block;
+  line-height: 40px;
+  background-color: #012B5A;
+  background-color: rgba(#012B5A,0);
+  background-color: transparent;
+  border: 2px solid #fff;
+  font-weight: 600;
+  @include transition-duration;
+  &:hover{
+    background-color:#012B5A;
+    background-color: transparent;
+    border-top:#012B5A;
+    border: 2px solid #012B5A;
+
+  }
+
+}

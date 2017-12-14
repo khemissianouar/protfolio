@@ -1,5 +1,7 @@
 <?php
+
 namespace Portfolio;
+
 use Portfolio\Router\Route;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Expressive\Router\FastRouteRouter;
@@ -10,7 +12,8 @@ use Zend\Expressive\Router\Route as ZendRoute;
  * Class Route
  * @package Portfolio
  */
-class Router{
+class Router
+{
     private $router;
 
     /**
@@ -18,7 +21,7 @@ class Router{
      */
     public function __construct()
     {
-        $this->router=new FastRouteRouter();
+        $this->router = new FastRouteRouter();
     }
 
     /**
@@ -26,23 +29,26 @@ class Router{
      * @param callable $callback
      * @param string $name
      */
-    public function get(string $path,callable $callback,string $name){
+    public function get(string $path, callable $callback, string $name)
+    {
 
-    $this->router->addRoute(new ZendRoute($path,$callback,['GET'],$name));
+        $this->router->addRoute(new ZendRoute($path, $callback, ['GET'], $name));
 
     }
 
     /**
-     * @param ServerRequestInterface $requestphp
+     * @param ServerRequestInterface $request
      * @return null|Route
      */
 
 
-    public function match(ServerRequestInterface $request): ?Route{
+    public function match(ServerRequestInterface $request):  Route
+    {
 
-        $result=$this->router->match($request);
+        $result = $this->router->match($request);
         if ($result->isSuccess()) {
-            return new Route($result->getMatchedRouteName(),
+            return new Route(
+                $result->getMatchedRouteName(),
                 $result->getMatchedMiddleware(),
                 $result->getMatchedParams()
             );
@@ -52,13 +58,13 @@ class Router{
 
     /**
      * @param string $name
-     * @param array $paramets
+     * @param array $parameters
      * @return null|string
      */
 
-    public function generateUri(string $name, array $paramets): ?string
+    public function generateUri(string $name, array $parameters): string
     {
-       return $this->router->generateUri($name,$paramets);
+        return $this->router->generateUri($name, $parameters);
 
     }
 }

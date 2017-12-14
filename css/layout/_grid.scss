@@ -1,0 +1,7 @@
+.l-container {
+  width: 1570px;
+  margin: 0 auto;
+  z-index: 5;
+  position: relative;
+  @include clearfix;
+}

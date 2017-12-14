@@ -1,0 +1,37 @@
+.competences{
+	box-shadow: 1px 1px 20px #000;
+	font-family: "roboto";
+	background-color: #F2F2F2;
+	padding-top:50px;
+	padding-bottom: 50px;
+}
+
+.progress {
+	box-shadow: none;
+    height: 100px;
+    color:#fff;
+}
+
+.progressbar-text{
+	color:black !important;
+}
+
+.progress > svg {
+  background-color:#fff;
+    height: 100%;
+    display: block;
+}
+
+.competenceInfo div{
+	display: inline-block;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.competenceInfo h1{
+	margin-bottom: 50px;
+}
+
+.progressbar-text{
+	font-size: 18px;
+}

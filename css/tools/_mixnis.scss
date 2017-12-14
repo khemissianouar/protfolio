@@ -1,0 +1,23 @@
+@mixin placeholder($color:$clr-mixin-placeholder) {
+  &.placeholder { color : $color; }
+  &:-moz-placeholder { @color : $color; }
+  &::-moz-placeholder { color : $color; }
+  &::-webkit-input-placeholder { color : $color; }
+}
+
+$prefixes: ("-webkit-","-moz-", "");
+
+@mixin selection($background-color: null, $color: contrast-color($background-color)) {
+  @include with-each-prefix(css-selection, $selection-support-threshold) {
+    $selector: "";
+    @if $current-prefix != null {
+      $selector: $current-prefix + "-";
+    }
+    $selector: "&::#{$selector}selection";
+    #{$selector} {
+      color: $color;
+      background-color: $background-color;
+      @content;
+    }
+  }
+}

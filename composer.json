@@ -8,7 +8,7 @@
         "psr-4": {
             "Portfolio\\": "src/Portfolio",
             "App\\":"src",
-            "Test\\":"tests"
+            "Tests\\":"tests"
         }
     },
     "authors": [
@@ -20,6 +20,7 @@
     "require": {
         "guzzlehttp/psr7": "^1.4",
         "http-interop/response-sender": "^1.0",
-        "zendframework/zend-expressive-fastroute": "^2.1"
+        "zendframework/zend-expressive-fastroute": "^2.1",
+        "http-interop/http-middleware": "^0.5.0"
     }
 }

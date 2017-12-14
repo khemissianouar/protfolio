@@ -1,0 +1,35 @@
+.header{
+  height: 1155px;
+  background: url("../../img/accueil.jpg") center top repeat;
+  @include background-size(cover);
+}
+.header-log{
+  display: block;
+  float: left;
+  padding-top: 80px;
+}
+.menu {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+  margin-top:140px;
+  float: right;
+  float: left;
+}
+.menu-item{
+  @include  transition-duration;
+  &:before {
+    content: '//';
+    color: #fff;
+    display: inline-block;
+    padding: 0 37px;
+  }
+  &:first-child{display:none;}
+  &:hover,&.is-active{color:#000;}
+  }
+
+.header-baseline{
+  font-weight: 300;
+  font-size: 45px;
+}
+
