@@ -7,7 +7,6 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
 
         <link rel="apple-touch-icon" href="icon.png">
@@ -21,6 +20,8 @@
         <link rel="stylesheet" href="css/style.css"/>
         <link rel="stylesheet" href="css/nivo-slider.css"/>
         <link rel="stylesheet" href="css/main.css">
+        <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
     </head>
     <body id="myPage">
       <script>
@@ -38,7 +39,7 @@
       </script>
         <header class="header">
       <a class="arrowUp" href="#myPage"><img id="arrow" class="arrow img-circle" src="img/arrow.png"/></a>
-          <nav class="navbar navbar-perso navbar-fixed-top">
+          <nav class="navbar navbar-perso navbar-fixed-top" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -46,15 +47,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#myPage">ACCUEIL</a>
+                <a class="navbar-brand" href="">ACCUEIL</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#apropos">A PROPOS</a></li>
-                    <li><a href="#parcours">MON PARCOURS</a></li>
-                    <li><a href="#competences">MES COMPETENCES</a></li>
-                    <li><a href="#projets">MES PROJETS</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
+                    <li><a  class="nav-link " href="#apropos">A PROPOS</a></li>
+                    <li><a  class="nav-link" href="#parcours">MON PARCOURS</a></li>
+                    <li><a class="nav-link"  href="#competences">MES COMPETENCES</a></li>
+                    <li><a  class="nav-link"href="#projets">MES PROJETS</a></li>
+                    <li><a  class="nav-link" href="#contact">CONTACT</a></li>
                 </ul>
             </div>
         </div>
@@ -79,7 +80,7 @@
 
                       <div class="apropos-txt">
                           <div class="apropos-title">
-                        <h1>A propos de moi</h2>
+                        <h1>A propos de moi</h1>
                           </div>
                         <img src="img/khemissi.jpg" class="avatar">
                       <p> je m'appelle Khemissi Anouar et je suis actuellement en quartiéme année Programme Global Tech à Epitech lille
@@ -223,7 +224,7 @@
                         <?php for ($i=1; $i <3 ; $i++): ?>
 
                         <article class="col-xs-6 work" id="realisation-<?= $i .'-'.$j ?>">
-                            <img src="http://lorempicsum.com/futurama/460/250/<?=$i?>"/><br>
+                            <img src="http://lorempicsum.com/futurama/460/250/<? = $i ?>"/><br>
                             <strong> ma réalisation<?= $j .'-'.$i ?></strong><br>
                             <em>Wordpress</em>
                             <div class="work_detail">
@@ -238,7 +239,7 @@
                                     </div>
                                     <div class="col-xs-4">
                                         <h2 class="stagger1">Mes Project <?=$i .'-'.$j ?></h2>
-                                        <p class="stagger2"><em>Word</em></p>
+                                        <p class="stagger2"><em>Word Press</em></p>
                                         <p class="stagger3"> s,vpoepovjoejoivjeoijv</p>
                                     </div>
                                 </div>
@@ -256,13 +257,19 @@
             <div class="contact-form" id="contact">
                 <div class="btn1"><h1>Contact</h1></div>
                   <form class="form" action="" >
-
-                    <input type="text" placeholder="Votre Nom" class="form-input"><br>
-                    <input type="text" placeholder="Votre Email" class="form-input"><br>
-                    <textarea class="form-textarea" placeholder="Votre Message"></textarea>
-                    <button type="submit"class="btn"> Envoyer</button>
+                      <div class="input">
+                      <input type="text" placeholder="Votre Nom" class="form-input" required><br>
+                    <span>Vous devez saiser Votre nom</span>
+                          </div>
+                      <div class="input">
+                          <input type="email" placeholder="Votre Email" class="form-input" required><br>
+                          <div class="input">
+                              <textarea class="form-textarea" placeholder="Votre Message" required></textarea>
+                          </div>
+                              <button type="submit"class="btn"> Envoyer</button>
+                      </div>
                   </form>
-            </div>
+          </div>
 
             <div class="contact-info">
               <h2> Contact Info</h2>
@@ -270,7 +277,7 @@
                 <li><i class="fa fa-heart"></i>77 Rue Balzac lille59000</li>
                 <li><i class="icon icon-ihone"></i>07 53 27 04 03</li>
                 <li><i class="icon icon-mail"></i>khemissianwar@gmail.com</li>
-
+              </ul>
             </div>
           </div>
 
@@ -282,6 +289,7 @@
         <script src="js/scrollreveal.js"></script>
       <script src="js/scrollpsy.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/reveal.js"></script>
             <script src="js/app.js"></script>
             <script src="js/jquery.nivo.slider.pack.js"></script>
 

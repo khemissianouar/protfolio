@@ -21,3 +21,28 @@
   width: 33px;
   height: 33px;
 line-height: 33px;}
+
+  .input{
+    span{display:none;}
+    input:required, textarea:required {
+      background: url(asterisk.png)100% top no-repeat;
+      background-size:13px;
+    }
+    input:focus:invalid,textarea:focus:invalid{
+      border-color:red;
+      background-image: none;
+      @include  single-box-shadow(#d45252,0,0,5px);
+    }
+    input:focus:invalid + span,textarea:focus:invalid + span{
+      display: block;
+      color: red;
+    }
+
+    input:focus:valid,textarea:focus:valid{
+      border-color:#56c93f;
+      @include  single-box-shadow(#56c93f,0,0,5px);
+    }
+    input:valid,textarea:valid{
+      background-image: none;
+    }
+  }

@@ -1,3 +1,35 @@
+<?php
+
+    if(!empty($_POST['nom']) AND !empty($_POST['mail']) AND !empty($_POST['message']))
+    {
+        $header="MIME-Version: 1.0\r\n";
+        $header.='From:"PrimFX.com"<khemissianwar@gmail.com>'."\n";
+        $header.='Content-Type:text/html; charset="uft-8"'."\n";
+        $header.='Content-Transfer-Encoding: 8bit';
+
+        $message='
+		<html>
+			<body>
+				<div align="center">
+					<br />
+					<u>Nom de l\'expéditeur :</u>'.$_POST['nom'].'<br />
+					<u>Mail de l\'expéditeur :</u>'.$_POST['mail'].'<br />
+					<br />
+					'.nl2br($_POST['message']).'
+					<br />
+				</div>
+			</body>
+		</html>
+		';
+
+        mail("khemissianwar@gmail.com", "CONTACT - Monsite.com", $message, $header);
+        $msg="Votre message a bien été envoyé !";
+    }
+    else{
+        $msg="Tous les champs doivent être complétés !";
+    }
+
+?>
 <!doctype html>
 <html class="no-js" lang="fr">
     <head>
@@ -7,7 +39,6 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
 
         <link rel="apple-touch-icon" href="icon.png">
@@ -21,6 +52,8 @@
         <link rel="stylesheet" href="css/style.css"/>
         <link rel="stylesheet" href="css/nivo-slider.css"/>
         <link rel="stylesheet" href="css/main.css">
+        <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
     </head>
     <body id="myPage">
       <script>
@@ -38,7 +71,7 @@
       </script>
         <header class="header">
       <a class="arrowUp" href="#myPage"><img id="arrow" class="arrow img-circle" src="img/arrow.png"/></a>
-          <nav class="navbar navbar-perso navbar-fixed-top">
+          <nav class="navbar navbar-perso navbar-fixed-top" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -46,20 +79,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#myPage">ACCUEIL</a>
+                <a class="navbar-brand" href="">ACCUEIL</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#apropos">A PROPOS</a></li>
-                    <li><a href="#parcours">MON PARCOURS</a></li>
-                    <li><a href="#competences">MES COMPETENCES</a></li>
-                    <li><a href="#projets">MES PROJETS</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
+                    <li><a  class="nav-link " href="#apropos">A PROPOS</a></li>
+                    <li><a  class="nav-link" href="#parcours">MON PARCOURS</a></li>
+                    <li><a class="nav-link"  href="#competences">MES COMPETENCES</a></li>
+                    <li><a  class="nav-link"href="#projets">MES PROJETS</a></li>
+                    <li><a  class="nav-link" href="#contact">CONTACT</a></li>
                 </ul>
             </div>
         </div>
       </nav>
-                <div class="cb"></div>
+
                 <div class="header-baseline">
                     <div class="header-baseline-1"> Developpeur informatique </div>
                 </div>
@@ -70,9 +103,7 @@
 
 
         </header>
-        <section class="section">
 
-        </section>
 
 
 
@@ -81,7 +112,7 @@
 
                       <div class="apropos-txt">
                           <div class="apropos-title">
-                        <h2>A propos de moi</h2>
+                        <h1>A propos de moi</h1>
                           </div>
                         <img src="img/khemissi.jpg" class="avatar">
                       <p> je m'appelle Khemissi Anouar et je suis actuellement en quartiéme année Programme Global Tech à Epitech lille
@@ -91,9 +122,7 @@
                           je suis néanmoins ouvert à toutes autres propositions!
                       </p></div>
               </div>
-              <section class="section">
 
-            </section>
 
             <div class="parcours" id="parcours">
                 <h1> Mon parcours </h1>
@@ -175,9 +204,7 @@
                     </div>
                 </div>
             </div>
-            <section class="section">
 
-          </section>
 
                 <div class="l-container"
                   <div id="competences" class="competences text-center">
@@ -215,16 +242,13 @@
                    <div id="suiteadobe" class="progress"></div>
                </div>
            </div>
-       </div>
+       </div
    </div>
-   <section class="section">
 
- </section>
 
             <div class="projets" id="projets">
 
                 <h1>Mes Projets</h1>
-
 
                 <div class="container">
                     <?php for ($j=1; $j <3; $j++): ?>
@@ -232,7 +256,7 @@
                         <?php for ($i=1; $i <3 ; $i++): ?>
 
                         <article class="col-xs-6 work" id="realisation-<?= $i .'-'.$j ?>">
-                            <img src="http://lorempicsum.com/futurama/460/250/<?=$i?>"/><br>
+                            <img src="http://lorempicsum.com/futurama/460/250/<?= $i ?>"/><br>
                             <strong> ma réalisation<?= $j .'-'.$i ?></strong><br>
                             <em>Wordpress</em>
                             <div class="work_detail">
@@ -247,7 +271,7 @@
                                     </div>
                                     <div class="col-xs-4">
                                         <h2 class="stagger1">Mes Project <?=$i .'-'.$j ?></h2>
-                                        <p class="stagger2"><em>Word</em></p>
+                                        <p class="stagger2"><em>Word Press</em></p>
                                         <p class="stagger3"> s,vpoepovjoejoivjeoijv</p>
                                     </div>
                                 </div>
@@ -260,19 +284,30 @@
                     <?php endfor; ?>
                 </div>
             </div>
-            <section class="section">
-          </section>
+        
           <div class="l-container">
             <div class="contact-form" id="contact">
                 <div class="btn1"><h1>Contact</h1></div>
-                  <form class="form" action="" >
-
-                    <input type="text" placeholder="Votre Nom" class="form-input"><br>
-                    <input type="text" placeholder="Votre Email" class="form-input"><br>
-                    <textarea class="form-textarea" placeholder="Votre Message"></textarea>
-                    <button type="submit"class="btn"> Envoyer</button>
+                  <form class="form" action="" method="post" >
+                      <div class="input">
+                      <input type="text" placeholder="Votre Nom" class="form-input" required name="nom"><br>
+                    <span>Vous devez saiser Votre nom</span>
+                          </div>
+                      <div class="input">
+                          <input type="email" placeholder="Votre Email" class="form-input" required name="mail"><br>
+                          <div class="input">
+                              <textarea class="form-textarea" placeholder="Votre Message" required name="message"></textarea>
+                          </div>
+                              <input type="submit"class="btn" name="mailform" value="Envoyer"/>
+                      </div>
                   </form>
-            </div>
+                <?php
+                if(isset($msg))
+                {
+                    echo $msg;
+                }
+                ?>
+          </div>
 
             <div class="contact-info">
               <h2> Contact Info</h2>
@@ -280,7 +315,7 @@
                 <li><i class="fa fa-heart"></i>77 Rue Balzac lille59000</li>
                 <li><i class="icon icon-ihone"></i>07 53 27 04 03</li>
                 <li><i class="icon icon-mail"></i>khemissianwar@gmail.com</li>
-
+              </ul>
             </div>
           </div>
 
@@ -292,6 +327,7 @@
         <script src="js/scrollreveal.js"></script>
       <script src="js/scrollpsy.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/reveal.js"></script>
             <script src="js/app.js"></script>
             <script src="js/jquery.nivo.slider.pack.js"></script>
 
